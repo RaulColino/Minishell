@@ -1,6 +1,6 @@
 # Minishell
 
-Linux Shell implemented in C
+Unix command-line interpreter implemented in C
 
 ## How it works
 
@@ -13,4 +13,4 @@ In case of execution of several commands, an array is created with the necessary
 
 The structure of the program is made in this way so that an independent process is started for the processing of the line that performs the redirects. Thus you do not have to worry about re-establishing them since the modification on the table of file descriptors is on a copy of this, which is removed at the end of the process.
 
-An attempt has been made to implement the functionality to run processes in the background. Running a line in the background shows the PID and the executed line. Background processes are saved in an array specific to them. In this way, the _jobs_ command can be executed to query the array and display the processes. However I have had trouble implementing the _fg_ command since the command processes executed in the background with _execv()_ have been configured to ignore the SIGINT and SIGQUIT signals.
+An attempt has been made to implement the functionality to run processes in the background. Running a line in the background shows the PID and the executed line. Background processes are saved in an array specific to them. In this way, the _jobs_ command can be executed to query the array and display the processes. However, I have had trouble implementing the _fg_ command since the command processes executed in the background with _execv()_ have been configured to ignore the SIGINT and SIGQUIT signals.
