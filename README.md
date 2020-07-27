@@ -4,8 +4,7 @@ Unix command-line interpreter implemented in C
 
 ## How it works
 
-When the input is executed, first it is checked if after parsing the line we have any commands.
-If there are none, the first iteration of the main program loop ends. If there is one, it checks if it's an internal command of the Shell. Note: An internal command _exit_ has been implemented to facilitate the exit of the program.
+When the input is executed, it is checked whether we have any commands after parsing the line. If there are none, the first iteration of the main program loop ends. If there is one, it checks if it's an internal command of the Shell. Note: An internal command _exit_ has been implemented to facilitate the exit of the program.
 
 If the input is not an internal command, a child process is created and it is checked if several commands or only one have been entered.  If only one has been entered, it is checked if the command exists and if so, it is executed using execv(). 
 
